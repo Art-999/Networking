@@ -13,6 +13,7 @@ import cz.msebera.android.httpclient.entity.StringEntity;
  */
 
 public class NetworkingHttpClient {
+    private static final String BASE_URL = "";
     private static AsyncHttpClient httpClient = new AsyncHttpClient(true, 80, 443);
 
     public static void get(Context context, String url, RequestParams requestParams, AsyncHttpResponseHandler responseHandler) {
@@ -21,6 +22,10 @@ public class NetworkingHttpClient {
 
     public static void post(Context context, String relativeUrl, StringEntity stringEntity, AsyncHttpResponseHandler responseHandler) {
         httpClient.post(context, relativeUrl, stringEntity, "application/json", responseHandler);
+    }
+
+    public static String getAbsoluteUrl(String relativeUrl) {
+        return BASE_URL + relativeUrl;
     }
 
 }
