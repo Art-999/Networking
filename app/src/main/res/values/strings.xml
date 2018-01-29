@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Networking</string>
+    <string name="get_call_url">https://freemegalist.com/api.php/?action=categories</string>
+</resources>
