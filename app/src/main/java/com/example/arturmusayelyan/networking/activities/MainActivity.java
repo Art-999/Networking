@@ -1,4 +1,4 @@
-package com.example.arturmusayelyan.networking;
+package com.example.arturmusayelyan.networking.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.arturmusayelyan.networking.R;
 import com.example.arturmusayelyan.networking.models.ChildCats;
 import com.example.arturmusayelyan.networking.models.ParentsCat;
 import com.example.arturmusayelyan.networking.utils.JsonParser;

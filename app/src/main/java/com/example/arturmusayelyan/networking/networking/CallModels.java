@@ -44,4 +44,66 @@ public class CallModels {
         System.out.println("Sign in Body " + body);
         return entity;
     }
+
+    public static StringEntity getResendVerificationCodeObject(String email) {
+        /**
+         * log in json example
+         *{
+         *  "command": "resendVerificationCode",
+         *      "params":{
+         *           "email":"testemail@gmail.com"
+         *       }
+         * }
+         * */
+        JSONObject body = new JSONObject();
+        try {
+            body.put("command", "resendVerificationCode");
+            JSONObject params = new JSONObject();
+            params.put("email", email);
+            body.put("params", params);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        StringEntity entity = null;
+        try {
+            entity = new StringEntity(body.toString());
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return entity;
+    }
+
+    public static StringEntity getVerifiedObject(String registrationToken, String userName, String password) {
+        /**
+         * set Verified json example
+         *{
+         * "command": "setVerified",
+         * "params": {
+         *           "registrationToken"  :5032,
+         *           "userName":"desed1q",
+         *           "password":"1231231q"
+         *           }
+         * }
+         * */
+        JSONObject body = new JSONObject();
+        try {
+            body.put("command", "setVerified");
+            JSONObject params = new JSONObject();
+            params.put("registrationToken", registrationToken);
+            params.put("userName", userName);
+            params.put("password", password);
+            body.put("params", params);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        StringEntity entity = null;
+        try {
+            entity = new StringEntity(body.toString());
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return entity;
+    }
 }

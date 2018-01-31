@@ -13,10 +13,12 @@ import cz.msebera.android.httpclient.entity.StringEntity;
 
 public class WebServiceManager {
 
+
     public static void getCall(Context context, AsyncHttpResponseHandler responseHandler) {
         NetworkingHttpClient.get(context, context.getString(R.string.get_call_url), null, responseHandler);
     }
     public static void postCall(Context context, String relativeUrl, StringEntity entity,AsyncHttpResponseHandler responseHandler){
         NetworkingHttpClient.post(context,relativeUrl,entity,responseHandler);
     }
+
 }
